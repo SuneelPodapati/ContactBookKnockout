@@ -15,6 +15,9 @@ namespace ContactBookKnockoutWebApp.Controllers
         }
 
         public ActionResult Observables() { return View(); }
+        public ActionResult DataBindings() { return View(); }
+        public ActionResult Bindings() { return View(); }
+        public ActionResult RestBindings() { return View(); }
 
     }
 }

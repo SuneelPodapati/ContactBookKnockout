@@ -197,6 +197,8 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\knockout-3.4.2.debug.js" />
     <Content Include="Scripts\knockout-3.4.2.js" />
+    <Content Include="Scripts\Lib\bindings.js" />
+    <Content Include="Scripts\Lib\dataBindings.js" />
     <Content Include="Scripts\Lib\Observables.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Web.config" />
@@ -232,6 +234,8 @@
     <Content Include="Views\web.config" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Observables.cshtml" />
+    <Content Include="Views\Home\DataBindings.cshtml" />
+    <Content Include="Views\Home\Bindings.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

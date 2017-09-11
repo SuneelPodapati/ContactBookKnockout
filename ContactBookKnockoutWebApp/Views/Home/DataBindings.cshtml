@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "DataBindings";
+}
+
+<h2>DataBindings</h2>
+
+<div class="card card-outline-primary" style="width:400px;">
+    <h4 class="card-header card-primary">Add Name</h4>
+    <div class="card-block">
+        <div class="row form-inline">
+            Name:&nbsp;
+            <input type="text" data-bind="value: accName, valueUpdate: 'afterkeydown'"/>
+            &nbsp;
+            <button class="btn btn-sm btn-outline-primary" data-bind="click: addName">Add Name</button>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-2">
+    <div class="col-4">
+        <h5 class="bg-success text-center text-white">Javascript Template</h5>
+        <table class="table table-responsive table-bordered table-sm" data-bind="template: {name: 'nameListTemplate', foreach: nameList}"></table>
+    </div>
+
+    <div class="col-4">
+        <h5 class="bg-info text-center text-white">Comment Base</h5>
+        <ul class="list-group">
+            <!-- ko foreach: nameList --> 
+            <li class="list-group-item holder space-around">
+                <span data-bind="text: name"></span>
+                <div>
+                    <a class="btn btn-sm btn-info" href="#">Edit</a>
+                    <a class="btn btn-sm btn-danger" href="#">Delete</a>
+                </div>
+            </li>
+            <!-- /ko-->
+        </ul>
+    </div>
+
+    <div class="col-4">
+        <h5 class="bg-primary text-center text-white">Control Flow</h5>
+        <ul class="list-group" data-bind="foreach: nameList">
+            <li class="list-group-item holder space-around">
+                <span data-bind="text: name"></span>
+                <div>
+                    <a class="btn btn-sm btn-info" href="#">Edit</a>
+                    <a class="btn btn-sm btn-danger" href="#">Delete</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script id="nameListTemplate" type="text/html">
+    <tr>
+        <td><span data-bind="text: name"></span></td>
+        <td><a class="btn btn-sm btn-danger" href="#">Delete</a></td>
+    </tr>
+</script>
+
+<script src="~/Scripts/Lib/dataBindings.js"></script>
