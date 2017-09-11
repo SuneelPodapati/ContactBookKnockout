@@ -125,6 +125,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\jquery.notifyBar.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
@@ -199,8 +200,11 @@
     <Content Include="Scripts\knockout-3.4.2.js" />
     <Content Include="Scripts\Lib\bindings.js" />
     <Content Include="Scripts\Lib\dataBindings.js" />
+    <Content Include="Scripts\Lib\jquery.notifyBar.js" />
     <Content Include="Scripts\Lib\Observables.js" />
     <Content Include="Scripts\Lib\protectedObservables.js" />
+    <Content Include="Scripts\Lib\restBindings.js" />
+    <Content Include="Scripts\Lib\restUtility.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -237,6 +241,7 @@
     <Content Include="Views\Home\Observables.cshtml" />
     <Content Include="Views\Home\DataBindings.cshtml" />
     <Content Include="Views\Home\Bindings.cshtml" />
+    <Content Include="Views\Home\RestBindings.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

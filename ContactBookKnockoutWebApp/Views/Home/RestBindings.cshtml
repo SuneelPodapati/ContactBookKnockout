@@ -1,0 +1,95 @@
+﻿
+@{
+    ViewBag.Title = "RestBindings";
+    <link href = "~/Content/jquery.notifyBar.css" rel = "stylesheet" />
+}
+
+<h2>RestBindings with Contact....</h2>
+
+<div class="row m-1">
+    <div class="col-3">
+        <div class="card card-outline-primary">
+            <h5 class="bg-primary text-center">New Contact</h5>
+            <div class="card-block">
+                <div>
+                    <div class="form-group">
+                        Name: <input type="text" data-bind="value: Name" />
+                    </div>
+                    <div class="form-group">
+                        Phone: <input type="text" data-bind="value: Phone" />
+                    </div>
+                    <div class="form-group">
+                        Group: <input type="text" data-bind="value: Group" />
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-outline-primary btn-sm" data-bind="click: addContact">New Contact</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card card-outline-info mt-1">
+            <h5 class="bg-info text-center">Group Search <span class="badge badge-primary badge-pill pull-right mr-1" data-bind="text: getGroups()"></span></h5>
+            <div class="card-block">
+                <div>
+                    <div class="form-group">
+                        <select data-bind="options: groupList, optionsText: $data, value: groupNameSearch, optionsCaption: 'Choose....'"></select>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-sm btn-outline-primary" data-bind="click: searchByGroup">Filter</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-5">
+        <div class="card card-outline-warning">
+            <h5 class="bg-warning">Contact List <span class="badge badge-danger badge-pill pull-right mr-1" data-bind="text: contactListCount"></span></h5>
+            <div class="card-block">
+                <table class="table table-responsive table-bordered table-sm table-hover" data-bind="foreach: contactList">
+                    <tr data-bind="click: $parent.selectContact">
+                        <td><span data-bind="text: Name"></span></td>
+                        <td><span data-bind="text: Phone"></span></td>
+                        <td><span data-bind="text: Group"></span></td>
+                        <td>
+                            <a class="btn btn-sm btn-outline-info" id="editContact">Edit</a>&nbsp;
+                            <a class="btn btn-sm btn-outline-danger">Delete</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-4">
+        <div class="card card-outline-warning">
+            <h5 class="bg-primary">Group Contact List <span class="badge badge-info badge-pill pull-right mr-1" data-bind="text: groupContactCount"></span></h5>
+            <div class="card-block">
+                <table class="table table-responsive table-bordered table-sm table-hover" data-bind="foreach: groupContactList">
+                    <tr>
+                        <td><span data-bind="text: Name"></span></td>
+                        <td><span data-bind="text: Phone"></span></td>
+                        <td><span data-bind="text: Group"></span></td>
+                        <td>
+                            <a class="btn btn-sm btn-outline-info" id="editContact">Edit</a>&nbsp;
+                            <a class="btn btn-sm btn-outline-danger">Delete</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="contactDialog" class="modal-dialog bg-warning" title="Edit Contact" data-bind="with: selectedContact">
+    Name: <input type="text" data-bind="value: Name" /><br />
+    Phone: <input type="text" data-bind="value: Phone" /><br />
+    Group: <input type="text" data-bind="value: Group" /><br />
+</div>
+
+
+
+<script src="~/Scripts/Lib/jquery.notifyBar.js"></script>
+<script src="~/Scripts/Lib/protectedObservables.js"></script>
+<script src="~/Scripts/Lib/restUtility.js"></script>
+<script src="~/Scripts/Lib/restBindings.js"></script>
