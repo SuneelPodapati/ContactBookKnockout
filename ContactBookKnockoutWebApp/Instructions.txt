@@ -1,0 +1,19 @@
+﻿ContactBookKnockoutWebApp
+
+Packages
+	01. install-package jQuery
+	02. install-package jQuery.ui.combined
+	03. install-package bootstrap -pre (bootstrap.4.0.0-alpha6)
+	04. install-package fontawesome
+	05. install-package Entityframework
+	06. install-package KnockoutJS
+	
+EntityFramework CodeFirst migrations syntax
+	01. Enable-Migrations -ContextTypeName ContactBookKnockoutWebApp.Models.Concrete.ContactDbContext -MigrationsDirectory DataMigrations
+		a. In Configuration Class Seed Method For startup data add -> context.Contacts.AddOrUpdate(c=>c.Name,
+				new Contact { Name = "Tintin", Phone = "12345", Group = "Friend"},
+				new Contact { Name = "Snowy", Phone = "23456", Group = "Family" });
+	02. Add-Migration -ConfigurationTypeName ContactBookKnockoutWebApp.DataMigrations.Configuration "InitialCreate"
+	03. Update-Database -ConfigurationTypeName ContactBookKnockoutWebApp.DataMigrations.Configuration -verbose
+
+

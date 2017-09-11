@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Observables";
+}
+
+<h2>Observables</h2>
+
+<div class="card card-outline-primary"  style="width: 400px;">
+    <h4 class="card-header card-primary">First</h4>
+    <div class="card-block">
+        Name: <input type="text" data-bind="value: name" />
+        <p>
+            Welcome to KnockoutJS, <span data-bind="text: name"></span>
+        </p>
+        <button data-bind="click: changeName">Change Name</button>
+    </div>
+</div>
+
+<script src="~/Scripts/Lib/Observables.js"></script>
