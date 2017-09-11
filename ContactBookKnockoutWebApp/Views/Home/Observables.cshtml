@@ -5,8 +5,67 @@
 
 <h2>Observables</h2>
 
-<div class="card card-outline-primary"  style="width: 400px;">
-    <h4 class="card-header card-primary">First</h4>
+<div class="row">
+    <div class="col-4">
+        <div class="card card-outline-primary" style="width: 400px;">
+            <h4 class="card-header card-primary">Fifth</h4>
+            <div class="card-block">
+                <div class="row">
+                    Name: <input type="text" data-bind="value: accName, valueUpdate: 'afterkeydown'" />&nbsp;
+                </div>
+                <div class="row mt-2">
+                    <button class="btn btn-sm btn-outline-primary" data-bind="click: addName">Add Name</button> &nbsp;
+                    <button class="btn btn-sm btn-outline-danger" data-bind="click: removeName">Remove Name</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="ml-5">
+            <ul class="list-group" data-bind="template: {name: 'nameListTemplate', foreach: nameList}"></ul>
+            <script id="nameListTemplate" type="text/html">
+                <li class="list-group-item">
+                    <span data-bind="text: name"></span>
+                </li>
+            </script>
+        </div>
+    </div>
+</div>
+
+
+
+
+@*<div class="card card-outline-primary" style="width: 400px;">
+    <h4 class="card-header card-primary">Fourth</h4>
+    <div class="card-block">
+        Name: <input type="text" data-bind="value: name, valueUpdate: 'afterkeydown'" />
+        <input type="checkbox" data-bind="checked: nameVisible" />
+        <p>
+            Welcome to KnockoutJS, <span data-bind="text: name, visible: nameVisible"></span>
+            <br />
+            <span data-bind="text: displayName"></span>
+        </p>
+        <button data-bind="click: changeName">Change Name</button>
+    </div>
+</div>*@
+
+
+@*<div class="card card-outline-primary" style="width: 400px;">
+    <h4 class="card-header card-primary">Third</h4>
+    <div class="card-block">
+        Name: <input type="text" data-bind="value: name, valueUpdate: 'afterkeydown'" />
+        <input type="checkbox" data-bind="checked: nameVisible"/>
+        <p>
+            Welcome to KnockoutJS, <span data-bind="text: name, visible: nameVisible"></span>
+        </p>
+        <button data-bind="click: changeName">Change Name</button>
+    </div>
+</div>*@
+
+
+
+@*<div class="card card-outline-primary"  style="width: 400px;">
+    <h4 class="card-header card-primary">First & Second</h4>
     <div class="card-block">
         Name: <input type="text" data-bind="value: name" />
         <p>
@@ -14,6 +73,6 @@
         </p>
         <button data-bind="click: changeName">Change Name</button>
     </div>
-</div>
+</div>*@
 
 <script src="~/Scripts/Lib/Observables.js"></script>
